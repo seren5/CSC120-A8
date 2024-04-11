@@ -47,22 +47,14 @@ public class Person {
     }
 
     public Number shrink(){
-        if (!isFood()){
-            return (-1);
-        }
-        else{
-            System.out.println("This does not affect your height!");
-
-        }
+        System.out.println("This is not food! You have shrunk!");
+        return (-1);
+        
     }
     
     public Number grow(){
-        if (isFood()){
-            return (1);
-        }
-        else{
-            System.out.println("This does not affect your height!");
-        }
+        System.out.println("You have grown!");
+        return (1);
     }
 
     public void rest(){
@@ -75,9 +67,11 @@ public class Person {
 
     public boolean isFood(){
         if (userFoodInput.contains("Yes")||userFoodInput.contains("yes")){
+            grow();
             return true;
         }
         else {
+            shrink();
             return false;
         }
     }
@@ -85,8 +79,9 @@ public class Person {
     public static void main(String[] arguments) {
         int size = 1;
         Scanner itemizer = new Scanner(System.in);
-        System.out.println("You are at a size scale of 1. What do you want to eat/drink?");
+        System.out.println("What do you want to eat/drink?");
         String userInput = itemizer.nextLine();
+        grab(userInput);
 
 
         Scanner foodInput = new Scanner(System.in);
