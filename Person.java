@@ -38,6 +38,7 @@ public class Person {
     }
     
     public boolean walk(String direction){
+        System.out.println("You have walked " + direction);
         return true;
     }
 
@@ -62,7 +63,7 @@ public class Person {
     }
     
     public void undo(){
-
+        
     }
 
     public boolean isFood(){
@@ -78,6 +79,7 @@ public class Person {
 
     public static void main(String[] arguments) {
         int size = 1;
+        
         Scanner itemizer = new Scanner(System.in);
         System.out.println("What do you want to eat/drink?");
         String userInput = itemizer.nextLine();
